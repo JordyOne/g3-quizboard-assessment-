@@ -6,7 +6,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
+    @question = Question.find_by(params[:id])
     render json: @question.to_json(include: :possible_answers)
   end
 
